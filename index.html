@@ -52,7 +52,11 @@
 			tb = new TinyTab($$('ul.nav li'), $$('ul.content li'));
 
 			// load treasure page
-			fetch("http://localhost:8080/treasure.html")
+			const header = {
+			"Content-Type": "text/html"	
+			}
+
+			fetch("treasure.html", {header})
 				.then(response => response.body)
 				.then(rb => {
 					const reader = rb.getReader();
